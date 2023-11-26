@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.cdnfonts.com/css/ethnocentric" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <title>Desportivos</title>
+  </head>
+  <body>
+    <div class="registration">
+      <div class="header">
+        <div class="heading"><h1>REGISTRATION</h1></div>
+      </div>
+      <div class="form-part">
+        <form>
+          <div class="form-name">
+            <div class="form-name-part">
+              <label class="name common-design"><p>NAME</p></label>
+              <input type="text" id="name" class="common-input" />
+            </div>
+            <div class="form-college-name">
+              <div class="subpart">
+                <label class="collegetext common-design">COLLEGE NAME</label>
+                <input list="colleges" id="collegeinput" class="common-input" />
+                <datalist id="colleges">
+                  //Options will be dynamically imported by the Javascript
+                </datalist>
+              </div>
+              <!-- <i class="fi fi-rr-angle-small-down"></i> -->
+            </div>
+          </div>
+          <div class="form-contact">
+            <div class="contact-email">
+              <label class="emailtext common-design"><p>EMAIL</p></label>
+              <input type="text" id="emailinput" class="common-input" />
+            </div>
+            <div class="contact-state">
+              <label class="statetext common-design"><p>STATE</p></label>
+              <input list="states" id="stateinput" class="common-input" />
+              <datalist id="states">
+                //Options will be dynamically imported by the Javascript
+              </datalist>
+              <!-- <i class="fi fi-rr-angle-small-down"></i> -->
+            </div>
+          </div>
+          <div class="form-phone">
+            <div class="contact-phone">
+              <label class="phonetext common-design"><p>PHONE NO.</p></label>
+              <input type="text" id="phoneinput" class="common-input" />
+            </div>
+            <div class="contact-sports">
+              <label class="sporttext common-design"><p>SPORTS</p></label>
+              <input list="sports" id="sportinput" class="common-input" />
+              <datalist id="sports">
+                //Options will be dynamically imported by the Javascript
+              </datalist>
+              <!-- <i class="fi fi-rr-angle-small-down"></i> -->
+            </div>
+          </div>
+          <div class="form-register">
+            <div class="upload-part">
+              <div class="upload">
+                <label class="uploadtext common-design"
+                  ><p>PHOTO UPLOAD</p></label
+                >
+                <input
+                  type="file"
+                  id="photoInput"
+                  class="common-input"
+                  name="photo"
+                  accept="image/*"
+                />
+              </div>
+              <div class="gender">
+                <label class="gendertext common-design"><p>GENDER</p></label>
+                <div class="gender-category">
+                  <div class="male-part">
+                    <input
+                      type="radio"
+                      id="male"
+                      class="checker"
+                      name="male"
+                    />
+                    <label for="male"><p class="maletext">MALE</p></label>
+                  </div>
+                  <div class="female-part">
+                    <input
+                      type="radio"
+                      id="female"
+                      class="checker"
+                      name="female"
+                    />
+                    <label for="female"><p class="femaletext">FEMALE</p></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="register-part">
+              <div class="register-button">
+                <button>
+                  <p class="register-text">REGISTER</p>
+                </button>
+              </div>
+              <div class="terms">
+                <button>
+                  <p class="register-text termstext">TERMS AND CONDITION</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <img src="./img/background.png" class="bgimg" alt="bgimg" />
+      <div class="face">
+        <img
+          src="./img/Screenshot 2023-11-25 183158 1.png"
+          alt="facedesign"
+          class="facedesign"
+        />
+      </div>
+      <img
+        src="./img/span.meteorite__left_center.png"
+        alt="symbol"
+        class="symbol"
+      />
+    </div>
+  </body>
+</html>

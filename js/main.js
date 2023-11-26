@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	herosTabs()
 	videoSection()
 
+	
+
 	if (document.documentElement.clientWidth < 991) {
 		mobile()
 	} else {
@@ -155,6 +157,7 @@ function disableParallax() {
 		offerTitle,
 		heroLeft,
 		heroCenter,
+		heroMiddle,
 		heroRight,
 		offerGround,
 		heroesV,
@@ -173,6 +176,7 @@ function offerParallax() {
 		const offerTitle = document.querySelector('.offer__title')
 		const heroLeft = document.querySelector('.hero__left')
 		const heroCenter = document.querySelector('.hero__center')
+		const heroMiddle = document.querySelector('.hero__middle')
 		const heroRight = document.querySelector('.hero__right')
 		const offerGround = document.querySelector('.offer__ground')
 		const heroesV = document.querySelector('.heroes__v')
@@ -189,6 +193,7 @@ function offerParallax() {
 				offerTitle,
 				heroLeft,
 				heroCenter,
+				heroMiddle,
 				heroRight,
 				offerGround,
 				heroesV,
@@ -213,6 +218,7 @@ function offerParallax() {
 				const offsetYOfferTitle = (scrollTop - offerSectionTop) * 0.4
 				const offsetYHeroLeft = (scrollTop - offerSectionTop) * 0.8
 				const offsetYHeroCenter = (scrollTop - offerSectionTop) * 0.8
+				const offsetYHeroMiddle = (scrollTop - offerSectionTop) * 0.8
 				const offsetYHeroRight = (scrollTop - offerSectionTop) * 0.8
 				const offsetYOfferGround = (scrollTop - offerSectionTop) * 0.8
 				const offsetYHeroesV = (scrollTop - offerSectionTop) * 1.2
@@ -226,6 +232,7 @@ function offerParallax() {
 				gsap.to(offerTitle, { duration: 1, y: offsetYOfferTitle })
 				gsap.to(heroLeft, { duration: 1, y: offsetYHeroLeft })
 				gsap.to(heroCenter, { duration: 1, y: offsetYHeroCenter })
+				gsap.to(heroMiddle, { duration: 1, y: offsetYHeroMiddle })
 				gsap.to(heroRight, { duration: 1, y: offsetYHeroRight })
 				gsap.to(offerGround, { duration: 1, y: offsetYOfferGround })
 				gsap.to(heroesV, { duration: 1, y: offsetYHeroesV })
