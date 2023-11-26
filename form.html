@@ -20,7 +20,11 @@
     <link href="css/font.css" rel="stylesheet" type="text/css" />
     <title>Desportivos</title>
   </head>
-  <body>
+  <body onload="loader()">
+
+    <div class="preloader ">
+      <video autoplay muted loop class="despoloader" src="media/Dpreloader1.mp4"></video>
+    </div>
     <div class="registration">
       <div class="header">
         <div class="heading"><h1>REGISTRATION</h1></div>
@@ -143,5 +147,12 @@
       ></video>
     </div>
     <script src="form.js"></script>
+    <script>
+      var preloader=document.getElementsByClassName(preloader)
+      function loader(){
+        preloader.style.display="none"
+      }
+
+    </script>
   </body>
 </html>
