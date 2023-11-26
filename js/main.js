@@ -27,81 +27,81 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 })
 
-// function preloader() {
-// 	if (document.querySelector('.dot-1')) {
-// 		function fade(element, duration, callback) {
-// 			var op = 1
-// 			var start = null
+function preloader() {
+	if (document.querySelector('.dot-1')) {
+		function fade(element, duration, callback) {
+			var op = 1
+			var start = null
 
-// 			function step(timestamp) {
-// 				if (!start) start = timestamp
-// 				var progress = timestamp - start
-// 				if (progress >= duration) {
-// 					element.style.opacity = '0'
-// 					if (callback) callback()
-// 					return
-// 				}
-// 				element.style.opacity = 1 - progress / duration
-// 				window.requestAnimationFrame(step)
-// 			}
+			function step(timestamp) {
+				if (!start) start = timestamp
+				var progress = timestamp - start
+				if (progress >= duration) {
+					element.style.opacity = '0'
+					if (callback) callback()
+					return
+				}
+				element.style.opacity = 1 - progress / duration
+				window.requestAnimationFrame(step)
+			}
 
-// 			window.requestAnimationFrame(step)
-// 		}
+			window.requestAnimationFrame(step)
+		}
 
-// 		function fadeIn(element, duration, callback) {
-// 			var op = 0
-// 			var start = null
+		function fadeIn(element, duration, callback) {
+			var op = 0
+			var start = null
 
-// 			function step(timestamp) {
-// 				if (!start) start = timestamp
-// 				var progress = timestamp - start
-// 				if (progress >= duration) {
-// 					element.style.opacity = '1'
-// 					if (callback) callback()
-// 					return
-// 				}
-// 				element.style.opacity = progress / duration
-// 				window.requestAnimationFrame(step)
-// 			}
+			function step(timestamp) {
+				if (!start) start = timestamp
+				var progress = timestamp - start
+				if (progress >= duration) {
+					element.style.opacity = '1'
+					if (callback) callback()
+					return
+				}
+				element.style.opacity = progress / duration
+				window.requestAnimationFrame(step)
+			}
 
-// 			window.requestAnimationFrame(step)
-// 		}
+			window.requestAnimationFrame(step)
+		}
 
-// 		var dot1 = document.querySelector('.dot-1')
-// 		var dot2 = document.querySelector('.dot-2')
-// 		var dot3 = document.querySelector('.dot-3')
+		var dot1 = document.querySelector('.dot-1')
+		var dot2 = document.querySelector('.dot-2')
+		var dot3 = document.querySelector('.dot-3')
 
-// 		function animateDots() {
-// 			fade(dot1, 0, function () {
-// 				fade(dot2, 0, function () {
-// 					fade(dot3, 0, function () {
-// 						fadeIn(dot1, 100, function () {
-// 							fadeIn(dot2, 100, function () {
-// 								fadeIn(dot3, 100, function () {
-// 									animateDots()
-// 								})
-// 							})
-// 						})
-// 					})
-// 				})
-// 			})
-// 		}
+		function animateDots() {
+			fade(dot1, 0, function () {
+				fade(dot2, 0, function () {
+					fade(dot3, 0, function () {
+						fadeIn(dot1, 100, function () {
+							fadeIn(dot2, 100, function () {
+								fadeIn(dot3, 100, function () {
+									animateDots()
+								})
+							})
+						})
+					})
+				})
+			})
+		}
 
-// 		animateDots()
-// 	}
+		animateDots()
+	}
 
-// 	document.querySelector('body').style.overflowY = 'hidden'
+	document.querySelector('body').style.overflowY = 'hidden'
 
-// 	window.addEventListener('load', function () {
-// 		var preloader = document.querySelector('.preloader')
-// 		preloader.classList.add('hide-preloader')
+	// window.addEventListener('load', function () {
+	// 	var preloader = document.querySelector('.preloader')
+	// 	preloader.classList.add('hide-preloader')
 
-// 		setTimeout(() => {
-// 			document.querySelector('body').style.overflowY = 'auto'
-// 			preloader.style.display = 'none'
-// 		}, 1000)
-// 	})
-// }
+	// 	setTimeout(() => {
+	// 		document.querySelector('body').style.overflowY = 'auto'
+	// 		preloader.style.display = 'none'
+	// 	}, 1000)
+	// })
+}
 
 function stickyHeaderComputer() {
 	if (document.querySelector('.header-sticky')) {
