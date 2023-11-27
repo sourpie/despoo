@@ -1177,6 +1177,18 @@ body::-webkit-scrollbar-thumb {
     background-size: cover;
     z-index: -2;
   }
+  .offer .offer__heroes .board {
+    position: absolute;
+    content: "";
+    left: -140px;
+    bottom: 10px;
+    width: 950px;
+    height: 80px;
+    background: url(../images/boards.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+  }
   .offer .offer__heroes .hero__right {
     position: absolute;
     content: "";
