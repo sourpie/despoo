@@ -3733,9 +3733,10 @@
     <script src="js/main.js"></script>
     <script src="js/register.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+       document.body.classList.add("preloader");
+      window.addEventListener("load", function () {
     // When the DOM content is fully loaded, hide the preloader and show the content
-    var preloader=document.getElementsByClassName(preloader)
+    var preloader=document.getElementsByClassName("preloader")
     preloader.style.display="none"
 });
     </script>
