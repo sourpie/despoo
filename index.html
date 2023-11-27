@@ -3733,12 +3733,14 @@
     <script src="js/main.js"></script>
     <script src="js/register.js"></script>
     <script>
-       document.body.classList.add("preloader");
+      document.body.classList.add("preloader");
+      
       window.addEventListener("load", function () {
-    // When the DOM content is fully loaded, hide the preloader and show the content
-    var preloader=document.getElementsByClassName("preloader")
-    preloader.style.display="none"
-});
+        // When the DOM content is fully loaded, hide the preloader and show the content
+        var preloader = document.getElementsByClassName("preloader")[0];
+        preloader.style.display = "none";
+      });
+    </script>
     </script>
   </body>
 </html>
