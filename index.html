@@ -17,6 +17,10 @@
   </head>
 
   <body>
+    <div class="preloader ">
+
+      <video autoplay muted loop class="despoloader" src="media/Dpreloader1.mp4"></video>
+      </div>
     <header>
       <div class="container">
         <div class="header__union">
@@ -3647,9 +3651,9 @@
         </div>
       </footer>
     </div>
-    <div class="preloader ">
+    <!-- <div class="preloader ">
 
-      <video autoplay muted loop class="despoloader" src="media/Dpreloader1.mp4"></video>
+      <video autoplay muted loop class="despoloader" src="media/Dpreloader1.mp4"></video> -->
       <!-- <svg
         width="241"
         height="26"
@@ -3719,7 +3723,7 @@
           fill="#F14B64"
         ></path>
       </svg> -->
-    </div>
+    <!-- </div> -->
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -3729,5 +3733,14 @@
     <script src="js/jquery.gallery.js"></script>
     <script src="js/main.js"></script>
     <script src="js/register.js"></script>
+    <script>
+      
+      window.addEventListener("load", function () {
+        // When the DOM content is fully loaded, hide the preloader and show the content
+        var preloader = document.getElementsByClassName("preloader")[0];
+        preloader.style.display = "none";
+      });
+    </script>
+    </script>
   </body>
 </html>
