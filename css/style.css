@@ -205,7 +205,7 @@ h6 {
     top: 2px;
     width: 1365px;
     height: 90px;
-    background: url(../images/header-line.svg);
+    /* background: url(../images/header-line.svg); */
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -1180,11 +1180,11 @@ body::-webkit-scrollbar-thumb {
   .offer .offer__heroes .board {
     position: absolute;
     content: "";
-    left: -140px;
-    bottom: 10px;
+    left: -160px;
+    bottom: 50px;
     width: 950px;
     height: 80px;
-    background: url(../images/boards.png);
+    background: url(../images/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
@@ -1239,7 +1239,7 @@ body::-webkit-scrollbar-thumb {
     content: "";
     left: 46.5%;
     transform: translateX(-50%);
-    bottom: 44px;
+    bottom: 90px;
     width: 1030px;
     height: 120px;
     background: url(../images/offer__title-1.png);
@@ -3884,7 +3884,7 @@ body::-webkit-scrollbar-thumb {
     content: "";
     left: 50%;
     transform: translateX(-50%);
-    bottom: 44px;
+    bottom: 90px;
     width: 908px;
     height: 100px;
     background: url(../images/offer__title-1.png);
@@ -7595,11 +7595,9 @@ body::-webkit-scrollbar-thumb {
   z-index: 1;
 }
 
-
-.despoloader{
+.despoloader {
   height: 100vh;
   width: 100vw;
-  
 }
 
 /* @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
