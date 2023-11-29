@@ -10,7 +10,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
+  user-select:none;
 }
+
+
 
 .registration {
   z-index: 1;
@@ -55,8 +59,8 @@ body {
 .face {
   width: 100%;
   text-align: end;
-  position: absolute;
-  bottom: 0px;
+  position:absolute
+  bottom: 10px;
 }
 
 .symbol {
@@ -92,18 +96,24 @@ body {
   font-weight: bold;
   font-size: 16px;
 }
+
 .register-button button {
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: #f14b64;
   border-radius: 20px;
   width: 30%;
+  transition: background-color 0.3s;
+  color: white;
 }
-.terms button {
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 20px;
-  width: 90%;
+
+.register-button button:hover {
+  background-color: black;
+  cursor: pointer;
+  color: white;
 }
+
+
+
+
 
 .maletext {
   font-family: "Ethnocentric", sans-serif;
@@ -154,18 +164,12 @@ body {
   justify-content: space-between;
 }
 
-.register-part {
-  margin-left: 20px;
-  margin-top: 50px;
-  width: 45%;
-}
-
 .upload-part {
   width: 45%;
 }
 
 .register-button {
-  margin-bottom: 10px;
+   text-align: center;
 }
 
 .subpart {
@@ -261,12 +265,6 @@ body {
     margin-right: auto;
   }
 
-  .register-part {
-    margin: 0;
-    display: flex;
-    width: 100%;
-  }
-
   .register-button button {
     width: 100%;
   }
@@ -302,11 +300,176 @@ body {
 input {
   font-family: "Ethnocentric", sans-serif;
   color: white;
-  /* Additional styling properties can be added as needed */
+  height: 23px;
 }
 
-.despoloader1{
+.despoloader1 {
   height: 100vh;
   width: 100vw;
+}
+
+.select-college{
+  position:relative;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 100%;
+  padding-top:5px;
+  padding-left:2px;
+  outline: none;
+  height:36px;
+  color:white;
+  font-size:2.3vh;
+}
+  .select-college .uil {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  .select-state{
+  position:relative;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 100%;
+  padding-top:5px;
+  padding-left:2px;
+  outline: none;
+  height:34px;
+  color:white;
+  font-size:2.3vh;
+}
+  .select-state .uil {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  .select-sport{
+  position:relative;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 100%;
+  padding-top:5px;
+  padding-left:2px;
+  outline: none;
+  height:34px;
+  color:white;
+  font-size:2.3vh;
+}
+  .select-sport .uil {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+.search{
+  margin-left:25px;
+
+}
+.search-icon{
+  position:absolute;
+  transform:translateY(2px);
+  padding-left:2px;
+ 
+}
+.sport-content{
+  position:absolute;
+  top:64vh;
+  display:none;
+  width:69vh;
+  margin-top:7px;
+  padding:7px;
+  background-color: white;
+  border-radius:10px;
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.state-content {
+   position:absolute;
+   top:50vh;
+  display:none;
+  width:69vh;
+  margin-top:7px;
+  padding:7px;
+  background-color: white;
+  border-radius:10px;
+  transition: opacity 0.5s ease-in-out;
+  z-index:5;
+}
+.college-content{
+   position:absolute;
+   top:36vh;
+  display:none;
+  width:69vh;
+  margin-top:7px;
+  padding:7px;
+  background-color: white;
+  border-radius:10px;
+  transition: opacity 0.5s ease-in-out;
+  z-index:9;
+}
+#college-options li{
+  margin:15px;
+  height:28px;
+
   
 }
+
+
+.options li{
+  height:25px;
+  margin:10px;
+  padding:0 13px
+  border-radius:5px;
+  display:flex;
+  cursor:pointer;
+  align-items:center;
+
+}
+.options li:hover{
+  background-color:#f2f2f2
+}
+
+.options{
+  overflow-y:auto;
+  margin-top:10px;
+  max-height:160px;
+}
+
+.options::-webkit-scrollbar{
+  width: 7px;
+}
+.options::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
+.sport-input{
+  color: black;
+  text-indent: 25px;
+  border-radius:4px ;
+}
+.state-input{
+  color: black;
+  text-indent: 25px;
+  border-radius:4px ;
+}
+
+.college-input{
+  color: black;
+  text-indent: 25px;
+  border-radius:4px ;
+}
+
+

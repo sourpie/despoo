@@ -21,34 +21,34 @@
     <title>Desportivos</title>
   </head>
   <body onload="loader1()">
-    <div class="preloader1">
-      <video
-        autoplay
-        muted
-        loop
-        class="despoloader1"
-        src="media/Dpreloader1.mp4"
-      ></video>
-    </div>
-
     <div class="registration">
       <div class="header">
         <div class="heading"><h1>REGISTRATION</h1></div>
       </div>
       <div class="form-part">
-        <form>
+        <form id="reg-form">
           <div class="form-name">
             <div class="form-name-part">
-              <label class="name common-design"><p>NAME</p></label>
-              <input type="text" id="name" class="common-input" />
+              <div class="loda common-design" contenteditable="true"><p>NAME</p></div>
+              <input type="text" id="name" class="common-input" required/>
             </div>
             <div class="form-college-name">
               <div class="subpart">
-                <label class="collegetext common-design">COLLEGE NAME</label>
-                <input list="colleges" id="collegeinput" class="common-input" />
-                <datalist id="colleges">
-                  //Options will be dynamically imported by the Javascript
-                </datalist>
+                <label class="collegetext common-design">COLEGES</label>
+                <div list="colleges" id="collegeinput" class="select-college">SELECT COLLEGE
+                  <span class="uil"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"/></svg></span>
+                  </div>
+                  <div class="college-content">
+                    <div class="search">
+                      <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 36 36"><path fill="currentColor" d="M16.33 5.05A10.95 10.95 0 1 1 5.39 16A11 11 0 0 1 16.33 5.05m0-2.05a13 13 0 1 0 13 13a13 13 0 0 0-13-13Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="m35 33.29l-7.37-7.42l-1.42 1.41l7.37 7.42A1 1 0 1 0 35 33.29Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/>
+                        </svg>
+                      </span>
+                      <input class="college-input" type="text" placeholder="Search">
+                    </div>
+                    <ul class="options" id="college-options"></ul>
+                    </ul>
+                  </div>
               </div>
               <!-- <i class="fi fi-rr-angle-small-down"></i> -->
             </div>
@@ -58,12 +58,27 @@
               <label class="emailtext common-design"><p>EMAIL</p></label>
               <input type="text" id="emailinput" class="common-input" />
             </div>
-            <div class="contact-state">
-              <label class="statetext common-design"><p>STATE</p></label>
-              <input list="states" id="stateinput" class="common-input" />
-              <datalist id="states">
-                //Options will be dynamically imported by the Javascript
-              </datalist>
+            <div class="form-college-name">
+              <div class="subpart">
+                <label class="collegetext common-design">STATE</label>
+                <div list="colleges" id="collegeinput" class="select-state">SELECT STATE
+                  <span class="uil"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"/></svg></span>
+                </div>
+                  <div class="state-content">
+                    <div class="search">
+                      <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 36 36"><path fill="currentColor" d="M16.33 5.05A10.95 10.95 0 1 1 5.39 16A11 11 0 0 1 16.33 5.05m0-2.05a13 13 0 1 0 13 13a13 13 0 0 0-13-13Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="m35 33.29l-7.37-7.42l-1.42 1.41l7.37 7.42A1 1 0 1 0 35 33.29Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/>
+                        </svg>
+                      </span>
+                      <input class="state-input" type="text" placeholder="Search">
+                    </div>
+                    <ul sty class="options" id="state-options"></ul>
+                    </ul>
+                  </div>
+                  
+                  
+                  
+              </div>
               <!-- <i class="fi fi-rr-angle-small-down"></i> -->
             </div>
           </div>
@@ -72,29 +87,28 @@
               <label class="phonetext common-design"><p>PHONE NO.</p></label>
               <input type="text" id="phoneinput" class="common-input" />
             </div>
-            <div class="contact-sports">
-              <label class="sporttext common-design"><p>SPORTS</p></label>
-              <input list="sports" id="sportinput" class="common-input" />
-              <datalist id="sports">
-                //Options will be dynamically imported by the Javascript
-              </datalist>
-              <!-- <i class="fi fi-rr-angle-small-down"></i> -->
+            <div class="form-college-name">
+              <div class="subpart">
+                <label class="collegetext common-design">SPORTS</label>
+                <div list="colleges" id="collegeinput" class="select-sport">SELECT SPORT
+                  <span class="uil"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"/></svg></span>
+                  </div>
+                  <div class="sport-content">
+                    <div class="search">
+                      <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 36 36"><path fill="currentColor" d="M16.33 5.05A10.95 10.95 0 1 1 5.39 16A11 11 0 0 1 16.33 5.05m0-2.05a13 13 0 1 0 13 13a13 13 0 0 0-13-13Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="m35 33.29l-7.37-7.42l-1.42 1.41l7.37 7.42A1 1 0 1 0 35 33.29Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/>
+                        </svg>
+                      </span>
+                      <input class="sport-input" type="text" placeholder="Search">
+                    </div>
+                    <ul class="options" id="sport-options"></ul>
+                    </ul>
+                  </div>
+              </div>
             </div>
           </div>
           <div class="form-register">
             <div class="upload-part">
-              <div class="upload">
-                <label class="uploadtext common-design"
-                  ><p>PHOTO UPLOAD</p></label
-                >
-                <input
-                  type="file"
-                  id="photoInput"
-                  class="common-input"
-                  name="photo"
-                  accept="image/*"
-                />
-              </div>
               <div class="gender">
                 <label class="gendertext common-design"><p>GENDER</p></label>
                 <div class="gender-category">
@@ -107,50 +121,29 @@
                       type="radio"
                       id="female"
                       class="checker"
-                      name="female"
+                      name="male"
                     />
                     <label for="female"><p class="femaletext">FEMALE</p></label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="register-part">
-              <div class="register-button">
-                <button>
-                  <p class="register-text">REGISTER</p>
-                </button>
-              </div>
-              <div class="terms">
-                <button>
-                  <p class="register-text termstext">TERMS AND CONDITION</p>
-                </button>
-              </div>
-            </div>
+
           </div>
         </form>
+        <div class="register-button">
+          <button onclick="submitForm()">
+            <p class="register-text">REGISTER</p>
+          </button>
+        </div>
       </div>
-      <img src="./img/background.png" class="bgimg" alt="bgimg" />
-      <div class="face">
-        <img
-          src="./img/Screenshot 2023-11-25 183158 1.png"
-          alt="facedesign"
-          class="facedesign"
-        />
-      </div>
+      
+      <img src="./img/Registration.png" class="bgimg" alt="bgimg" />
       <img
         src="./img/span.meteorite__left_center.png"
         alt="symbol"
         class="symbol"
       />
-    </div>
-    <div class="preloader">
-      <video
-        autoplay
-        muted
-        loop
-        class="despoloader"
-        src="media/Dpreloader1.mp4"
-      ></video>
     </div>
     <script src="form.js"></script>
     <script>

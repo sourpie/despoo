@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form to Database</title>
+</head>
+<body>
+
+    <div class="container">
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+    // Get form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // Create an object with the form data
+    var formData = {
+        name: name,
+        email: email
+    };
+
+    // In a real-world scenario, you would send this data to the server using AJAX or Fetch
+    // For simplicity, we'll just log the data to the console in this example
+    console.log(formData);
+
+    // You can add AJAX or Fetch code here to send data to the server and save it to the database
+}
+
+    </script>
+</body>
+</html>
