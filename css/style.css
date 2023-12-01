@@ -1177,18 +1177,7 @@ body::-webkit-scrollbar-thumb {
     background-size: cover;
     z-index: -2;
   }
-  .offer .offer__heroes .board {
-    position: absolute;
-    content: "";
-    left: -160px;
-    bottom: 50px;
-    width: 950px;
-    height: 80px;
-    background: url(../images/banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 2;
-  }
+
   .offer .offer__heroes .hero__right {
     position: absolute;
     content: "";
@@ -1221,6 +1210,7 @@ body::-webkit-scrollbar-thumb {
     width: 967px;
     height: 320px;
     z-index: 4;
+    padding: 35px;
   }
   .offer .offer__title .offer__title_stones {
     position: absolute;
@@ -1243,6 +1233,18 @@ body::-webkit-scrollbar-thumb {
     width: 1030px;
     height: 120px;
     background: url(../images/offer__title-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .offer .board {
+    position: absolute;
+    content: "";
+    left: 46.5%;
+    transform: translateX(-50%);
+    bottom: 180px;
+    width: 1000px;
+    height: 75px;
+    background: url(../images/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
