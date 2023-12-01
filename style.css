@@ -10,7 +10,10 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  user-select:none;
 }
+
+
 
 .registration {
   z-index: 1;
@@ -55,8 +58,8 @@ body {
 .face {
   width: 100%;
   text-align: end;
-  position: absolute;
-  bottom: 0px;
+  position:absolute;
+  bottom: 10px;
 }
 
 .symbol {
@@ -92,18 +95,24 @@ body {
   font-weight: bold;
   font-size: 16px;
 }
+
 .register-button button {
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: #f14b64;
   border-radius: 20px;
   width: 30%;
+  transition: background-color 0.3s;
+  color: white;
 }
-.terms button {
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 20px;
-  width: 90%;
+
+.register-button button:hover {
+  background-color: black;
+  cursor: pointer;
+  color: white;
 }
+
+
+
+
 
 .maletext {
   font-family: "Ethnocentric", sans-serif;
@@ -154,18 +163,12 @@ body {
   justify-content: space-between;
 }
 
-.register-part {
-  margin-left: 20px;
-  margin-top: 50px;
-  width: 45%;
-}
-
 .upload-part {
   width: 45%;
 }
 
 .register-button {
-  margin-bottom: 10px;
+   text-align: center;
 }
 
 .subpart {
@@ -198,6 +201,7 @@ body {
     width: 80%;
     margin: auto;
   }
+
 
   .form-name-part {
     width: 100%;
@@ -261,12 +265,6 @@ body {
     margin-right: auto;
   }
 
-  .register-part {
-    margin: 0;
-    display: flex;
-    width: 100%;
-  }
-
   .register-button button {
     width: 100%;
   }
@@ -280,6 +278,11 @@ body {
     font-size: 20px;
     text-align: center;
   }
+
+  .register-button button{
+    margin-bottom: 100px;
+  }
+
 }
 
 @media screen and (max-width: 420px) {
@@ -290,6 +293,11 @@ body {
   .symbol {
     display: none;
   }
+  .heading{
+    margin-left: 0px;
+  }
+
+ 
 }
 
 @media screen and (max-width: 598px) {
@@ -297,16 +305,228 @@ body {
     font-size: 15px;
     margin-top: 40px;
   }
+
+  .select-college{
+    font-size: 12px;
+  }
+
+  .select-sport{
+    font-size: 12px;
+  }
+
+  .select-state{
+    font-size: 12px;
+  }
 }
 
 input {
   font-family: "Ethnocentric", sans-serif;
   color: white;
-  /* Additional styling properties can be added as needed */
+  height: 23px;
 }
 
-.despoloader1{
+@media screen and (min-width:1127px) {
+
+  .college-content{
+    max-width:33%;
+  }
+
+  .sport-content{
+    max-width:33%;
+  }
+
+  .state-content{
+    max-width:33%;
+  }
+
+}
+
+.despoloader1 {
   height: 100vh;
   width: 100vw;
-  
 }
+
+.select-college{
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  outline: none;
+  height:36px;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-state{
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  outline: none;
+  height:36px;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-sport{
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  outline: none;
+  height:36px;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.college-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
+}
+
+.sport-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
+}
+
+
+.state-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
+}
+
+.college-content{
+  position: absolute;
+  width:80%;
+ display:none;
+ margin-top:7px;
+ padding:7px;
+ background-color: white;
+ border-radius:10px;
+ transition: opacity 0.5s ease-in-out;
+ height: 300px;
+ overflow-y: scroll;
+}
+
+.sport-content{
+  position: absolute;
+  width:80%;
+  display:none;
+  margin-top:7px;
+  padding:7px;
+  background-color: white;
+  border-radius:10px;
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.state-content {
+  position: absolute;
+  width:80%;
+ display:none;
+ margin-top:7px;
+ padding:7px;
+ background-color: white;
+ border-radius:10px;
+ transition: opacity 0.5s ease-in-out;
+ height: 300px;
+ overflow-y: scroll;
+}
+
+#college-options li{
+  margin:15px;
+  height:40px;
+}
+
+.options li{
+  height:35px;
+  margin:10px;
+  padding:0 13px;
+  border-radius:5px;
+  display:flex;
+  cursor:pointer;
+  align-items:center;
+  font-size: 12px;
+}
+
+
+.options li:hover{
+  background-color:#f2f2f2
+}
+
+
+
+.college-content::-webkit-scrollbar{
+  width: 7px;
+}
+.college-content::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.college-content::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.college-content::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
+.sport-content::-webkit-scrollbar{
+  width: 7px;
+}
+.sport-content::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.sport-content::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.sport-content::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
+
+.state-content::-webkit-scrollbar{
+  width: 7px;
+}
+.state-content::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.state-content::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.state-content::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
+
+
