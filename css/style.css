@@ -98,13 +98,14 @@ h6 {
   }
   header .header__union {
     position: relative;
-    width: 947px;
+    width: 100%;
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
     margin-left: -25px;
+    padding: 3rem;
   }
   header .header__union .header__navigation {
     display: flex;
@@ -132,10 +133,17 @@ h6 {
   header .header__union .header__navigation .navigation__item:last-child {
     margin-right: 0;
   }
-  header .header__union .header__logo {
+  header .header__sticky .header__logo {
+    position: absolute;
+    display: contents;
+    padding: 3px 3px 3px 3px;
+    height: 72px;
+  }
+  header .header__sticky .header__logo a img {
+    height: 10vh;
     position: relative;
-    margin: 0 64px;
-    padding-top: 27px;
+    transform: translate(-50%, 0);
+    left: 50%;
   }
   header .header__union .header__logo::after {
     position: absolute;
@@ -218,9 +226,9 @@ h6 {
   position: fixed;
   left: 0;
   top: -150px;
-  background: #010101;
+  background: inherit;
   width: 100%;
-  height: 70px;
+  height: 10vh;
   padding-right: 43px;
   z-index: 1111111111;
   transition: top 2s;
@@ -232,11 +240,17 @@ h6 {
     top: 0;
     padding-right: 0;
     display: block;
+    padding: 3px 3px 3px 3px;
+    background: black;
   }
 }
 @media (max-width: 420px) {
   .header-sticky {
     height: 72px;
+    padding: 3px 3px 3px 3px;
+    position: absolute;
+    display: contents;
+    background: inherit;
   }
 }
 .header-sticky .mobileMenu__header-close {
@@ -303,8 +317,10 @@ h6 {
 }
 @media (max-width: 420px) {
   .header-sticky .header__union .header__logo {
-    margin: 0 18px;
-    margin-top: 4px;
+    position: absolute;
+    display: contents;
+    padding: 3px 3px 3px 3px;
+    height: 72px;
   }
 }
 .header-sticky .header__union .header__social {
@@ -470,6 +486,7 @@ body::-webkit-scrollbar-thumb {
 .header__mint {
   display: none;
   margin-top: 10px;
+  width: 1vh;
 }
 
 #playButton {
@@ -578,9 +595,10 @@ body::-webkit-scrollbar-thumb {
 }
 .mobileMenu__header-logo {
   padding-top: 16px;
+  margin-top: 40px;
 }
 .mobileMenu__header-logo a img {
-  width: 113.398px;
+  width: 10%;
   height: auto;
 }
 .mobileMenu__header-mint {
@@ -1244,7 +1262,7 @@ body::-webkit-scrollbar-thumb {
     bottom: 180px;
     width: 1000px;
     height: 75px;
-    background: url(../images/banner.png);
+    background: url(../images/board.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -4239,13 +4257,16 @@ body::-webkit-scrollbar-thumb {
     background-position: center bottom;
   }
   header .header__logo {
-    position: relative;
-    margin: 0 16px;
-    padding-top: 17px;
+    position: absolute;
+    display: contents;
+    padding: 3px 3px 3px 3px;
+    height: 72px;
   }
   header .header__logo img {
-    width: 113.398px;
-    height: auto;
+    height: 10vh;
+    position: relative;
+    transform: translate(-50%, 0);
+    left: 50%;
   }
   header .header__btnMenu {
     margin-left: 17.99px;
@@ -4274,7 +4295,7 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     top: 0;
     width: 100%;
-    height: 850px;
+    height: 800px;
     background-image: url(../images/offer_bg-tablet.jpg);
     background-repeat: no-repeat;
     background-position: center top;
@@ -4404,15 +4425,44 @@ body::-webkit-scrollbar-thumb {
     width: 366px;
     height: 143.216px;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
   }
+
+  .header__button-1 {
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+    border-radius: 8px;
+    background: #f14b64;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    padding: 9px 15px;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-family: Ethnocentric;
+    text-align: center;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 1s, color 1s;
+  }
+
   .offer__text {
     position: absolute;
-    left: 50%;
+    margin-left: 13rem;
     transform: translateX(-50%);
     bottom: 0;
-    width: 366px;
-    height: 99.722px;
-    background-image: url(../images/offer__title-mob.png);
+    width: 82vw;
+    height: 65px;
+    background-image: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -5688,18 +5738,21 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-between;
     z-index: 10;
-    background-image: url(../images/header-line-mob.svg);
+    /* background-image: url(../images/header-line-mob.svg); */
     background-repeat: no-repeat;
     background-position: center bottom;
   }
   header .header__logo {
-    position: relative;
-    margin: 0 16px;
-    padding-top: 17px;
+    position: absolute;
+    display: contents;
+    padding: 3px 3px 3px 3px;
+    height: 72px;
   }
   header .header__logo img {
-    width: 113.398px;
-    height: auto;
+    height: 10vh;
+    position: relative;
+    transform: translate(-50%, 0);
+    left: 50%;
   }
   header .header__btnMenu {
     margin-left: 17.99px;
@@ -5747,7 +5800,7 @@ body::-webkit-scrollbar-thumb {
     right: 0;
     bottom: -18px;
     height: 197px;
-    background-image: url(../images/ground-mob.svg);
+    background-image: url(../images/ground-mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 3;
@@ -5857,15 +5910,44 @@ body::-webkit-scrollbar-thumb {
     width: 366px;
     height: 143.216px;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
   }
+
+  .header__button-1 {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    border-radius: 8px;
+    background: #f14b64;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    padding: 9px 15px;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-family: Ethnocentric;
+    text-align: center;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 1s, color 1s;
+  }
+
   .offer__text {
     position: absolute;
-    left: 50%;
+    margin-left: 13rem;
     transform: translateX(-50%);
     bottom: 0;
-    width: 366px;
-    height: 99.722px;
-    background-image: url(../images/offer__title-mob.png);
+    width: 92vw;
+    height: 50px;
+    background-image: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -6940,7 +7022,7 @@ body::-webkit-scrollbar-thumb {
     height: 600px;
   }
   .offer__background {
-    background-image: url(../images/offer_bg-tablet.jpg);
+    background-image: url(../images/offer_bg-mob.png);
     background-size: cover;
     height: 600px;
   }
@@ -6962,6 +7044,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-between;
     padding: 8px 1px 0 10px;
+    box-sizing: border-box;
   }
   header .mobileMenu__header-close {
     padding: 4px 0;
@@ -6969,9 +7052,10 @@ body::-webkit-scrollbar-thumb {
   }
   header .mobileMenu__header-logo {
     padding-top: 16px;
+    height: 80%;
   }
   header .mobileMenu__header-logo a img {
-    width: 113.398px;
+    width: auto;
     height: auto;
   }
   header .mobileMenu__header-mint {
