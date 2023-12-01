@@ -10,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: hidden;
   user-select:none;
 }
 
@@ -59,7 +58,7 @@ body {
 .face {
   width: 100%;
   text-align: end;
-  position:absolute
+  position:absolute;
   bottom: 10px;
 }
 
@@ -203,6 +202,7 @@ body {
     margin: auto;
   }
 
+
   .form-name-part {
     width: 100%;
   }
@@ -278,6 +278,11 @@ body {
     font-size: 20px;
     text-align: center;
   }
+
+  .register-button button{
+    margin-bottom: 100px;
+  }
+
 }
 
 @media screen and (max-width: 420px) {
@@ -288,12 +293,29 @@ body {
   .symbol {
     display: none;
   }
+  .heading{
+    margin-left: 0px;
+  }
+
+ 
 }
 
 @media screen and (max-width: 598px) {
   .heading {
     font-size: 15px;
     margin-top: 40px;
+  }
+
+  .select-college{
+    font-size: 12px;
+  }
+
+  .select-sport{
+    font-size: 12px;
+  }
+
+  .select-state{
+    font-size: 12px;
   }
 }
 
@@ -303,173 +325,208 @@ input {
   height: 23px;
 }
 
+@media screen and (min-width:1127px) {
+
+  .college-content{
+    max-width:33%;
+  }
+
+  .sport-content{
+    max-width:33%;
+  }
+
+  .state-content{
+    max-width:33%;
+  }
+
+}
+
 .despoloader1 {
   height: 100vh;
   width: 100vw;
 }
 
 .select-college{
-  position:relative;
   background-color: transparent;
   border: 3px solid white;
   border-radius: 5px;
-  width: 100%;
-  padding-top:5px;
-  padding-left:2px;
   outline: none;
   height:36px;
   color:white;
-  font-size:2.3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-  .select-college .uil {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-  .select-state{
-  position:relative;
+
+.select-state{
   background-color: transparent;
   border: 3px solid white;
   border-radius: 5px;
-  width: 100%;
-  padding-top:5px;
-  padding-left:2px;
   outline: none;
-  height:34px;
+  height:36px;
   color:white;
-  font-size:2.3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-  .select-state .uil {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-  .select-sport{
-  position:relative;
+
+.select-sport{
   background-color: transparent;
   border: 3px solid white;
   border-radius: 5px;
-  width: 100%;
-  padding-top:5px;
-  padding-left:2px;
   outline: none;
-  height:34px;
+  height:36px;
   color:white;
-  font-size:2.3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-  .select-sport .uil {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
 
 .search{
-  margin-left:25px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.search-icon{
-  position:absolute;
-  transform:translateY(2px);
-  padding-left:2px;
- 
+
+.college-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
 }
+
+.sport-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
+}
+
+
+.state-input{
+  width:85%;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px; 
+  color: black;
+  text-indent: 25px;
+}
+
+.college-content{
+  position: absolute;
+  width:80%;
+ display:none;
+ margin-top:7px;
+ padding:7px;
+ background-color: white;
+ border-radius:10px;
+ transition: opacity 0.5s ease-in-out;
+ height: 300px;
+ overflow-y: scroll;
+}
+
 .sport-content{
-  position:absolute;
-  top:64vh;
+  position: absolute;
+  width:80%;
   display:none;
-  width:69vh;
   margin-top:7px;
   padding:7px;
   background-color: white;
   border-radius:10px;
   transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  height: 300px;
+  overflow-y: scroll;
 }
 
 .state-content {
-   position:absolute;
-   top:50vh;
-  display:none;
-  width:69vh;
-  margin-top:7px;
-  padding:7px;
-  background-color: white;
-  border-radius:10px;
-  transition: opacity 0.5s ease-in-out;
-  z-index:5;
+  position: absolute;
+  width:80%;
+ display:none;
+ margin-top:7px;
+ padding:7px;
+ background-color: white;
+ border-radius:10px;
+ transition: opacity 0.5s ease-in-out;
+ height: 300px;
+ overflow-y: scroll;
 }
-.college-content{
-   position:absolute;
-   top:36vh;
-  display:none;
-  width:69vh;
-  margin-top:7px;
-  padding:7px;
-  background-color: white;
-  border-radius:10px;
-  transition: opacity 0.5s ease-in-out;
-  z-index:9;
-}
+
 #college-options li{
   margin:15px;
-  height:28px;
-
-  
+  height:40px;
 }
 
-
 .options li{
-  height:25px;
+  height:35px;
   margin:10px;
-  padding:0 13px
+  padding:0 13px;
   border-radius:5px;
   display:flex;
   cursor:pointer;
   align-items:center;
-
+  font-size: 12px;
 }
+
+
 .options li:hover{
   background-color:#f2f2f2
 }
 
-.options{
-  overflow-y:auto;
-  margin-top:10px;
-  max-height:160px;
-}
 
-.options::-webkit-scrollbar{
+
+.college-content::-webkit-scrollbar{
   width: 7px;
 }
-.options::-webkit-scrollbar-track{
+.college-content::-webkit-scrollbar-track{
   background: #f1f1f1;
   border-radius: 25px;
 }
-.options::-webkit-scrollbar-thumb{
+.college-content::-webkit-scrollbar-thumb{
   background: #ccc;
   border-radius: 25px;
 }
-.options::-webkit-scrollbar-thumb:hover{
+.college-content::-webkit-scrollbar-thumb:hover{
   background: #b3b3b3;
 }
 
-.sport-input{
-  color: black;
-  text-indent: 25px;
-  border-radius:4px ;
+.sport-content::-webkit-scrollbar{
+  width: 7px;
 }
-.state-input{
-  color: black;
-  text-indent: 25px;
-  border-radius:4px ;
+.sport-content::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.sport-content::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.sport-content::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
 }
 
-.college-input{
-  color: black;
-  text-indent: 25px;
-  border-radius:4px ;
+
+.state-content::-webkit-scrollbar{
+  width: 7px;
 }
+.state-content::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.state-content::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.state-content::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
 
 
