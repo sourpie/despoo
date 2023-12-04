@@ -220,14 +220,6 @@ async function submitForm() {
       const responseText = await response.text();
       console.log("Server response:", responseText);
       alert("Registration Successful");
-       document.getElementById("name").value = "";
-       document.getElementById("emailinput").value = "";
-       document.getElementById("phoneinput").value = "";
-       document.querySelector(".select-college").textContent = "SELECT College";
-       document.querySelector(".select-state").textContent = "SELECT State";
-       document.querySelector(".select-sport").textContent = "SELECT Sport";
-       document.getElementById("male").checked = false;
-       document.getElementById("female").checked = false;
     } else {
       console.error("Error submitting form data:", response.statusText);
     }
@@ -235,14 +227,6 @@ async function submitForm() {
     console.error("Error submitting form data:", error.message);
   }
   finally{
-    document.getElementById("name").value = "";
-    document.getElementById("emailinput").value = "";
-    document.getElementById("phoneinput").value = "";
-    document.querySelector(".select-college").textContent = "SELECT COLLEGE";
-    document.querySelector(".select-state").textContent = "SELECT STATE";
-    document.querySelector(".select-sport").textContent = "SELECT SPORT";
-    document.getElementById("male").checked = false;
-    document.getElementById("female").checked = false;
-    reg.textContent="Register"
+   location.reload()
   }
 }
