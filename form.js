@@ -194,6 +194,8 @@ async function submitForm() {
     document.querySelector(".select-college").textContent=otherCollege
     playerCollege=otherCollege;
   }
+  const reg=document.querySelector(".register-text")
+  reg.textContent="Registering..."
 
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbz1c9Jw3qtzDAkvyFeMdB1Ue9O6-8qaCno13bKd8v-Py4dRt5j7uvdg4xRjqzmzGzpz/exec";
@@ -208,7 +210,6 @@ async function submitForm() {
     gender: playerGender,
   };
 
-  // Send data to Google Apps Script
   try {
     const response = await fetch(scriptUrl, {
       method: "POST",
@@ -219,10 +220,29 @@ async function submitForm() {
       const responseText = await response.text();
       console.log("Server response:", responseText);
       alert("Registration Successful");
+       document.getElementById("name").value = "";
+       document.getElementById("emailinput").value = "";
+       document.getElementById("phoneinput").value = "";
+       document.querySelector(".select-college").textContent = "SELECT College";
+       document.querySelector(".select-state").textContent = "SELECT State";
+       document.querySelector(".select-sport").textContent = "SELECT Sport";
+       document.getElementById("male").checked = false;
+       document.getElementById("female").checked = false;
     } else {
       console.error("Error submitting form data:", response.statusText);
     }
   } catch (error) {
     console.error("Error submitting form data:", error.message);
+  }
+  finally{
+    document.getElementById("name").value = "";
+    document.getElementById("emailinput").value = "";
+    document.getElementById("phoneinput").value = "";
+    document.querySelector(".select-college").textContent = "SELECT COLLEGE";
+    document.querySelector(".select-state").textContent = "SELECT STATE";
+    document.querySelector(".select-sport").textContent = "SELECT SPORT";
+    document.getElementById("male").checked = false;
+    document.getElementById("female").checked = false;
+    reg.textContent="Register"
   }
 }
