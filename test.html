@@ -1,44 +1,61 @@
-<!DOCTYPE html>
+                
+<!DOCTYPE html> 
+<!-- The doctype declaration tells the browser the version of HTML that the document is written in. -->
 <html lang="en">
+<!-- The <html> element is the root element of an HTML page, and indicates that the page is written in HTML. -->
 <head>
     <meta charset="UTF-8">
+    <!-- The <meta> element provides metadata about the HTML document, such as character encoding. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- This meta tag tells Internet Explorer to use the latest version of the rendering engine. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Form to Database</title>
+    <!-- The viewport meta tag specifies how the website should be scaled on different devices. -->
+    <title>HTML form to Google Sheet</title>
+    <!-- The title element defines the title of the document, which is displayed in the browser's title bar. -->
 </head>
+ 
 <body>
-
-    <div class="container">
-        <form id="myForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <button type="button" onclick="submitForm()">Submit</button>
-        </form>
-    </div>
-
+    <h1 id="msg"></h1>
+    <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
+    <form>
+        <input type="text" name="name" placeholder='Name'><br><br>
+        <!-- The <input> element is a form control element that allows the user to input data. -->
+        <input type="email" name="email" placeholder='Email'><br><br>
+        <input type="tel" name="phone" placeholder='Phone'><br><br>
+        <input type="submit" id="sub">
+        <!-- The <input type="submit"> element creates a submit button. The id attribute creates a unique identifier for the element. -->
+    </form>
     <script>
-        function submitForm() {
-    // Get form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-
-    // Create an object with the form data
-    var formData = {
-        name: name,
-        email: email
-    };
-
-    // In a real-world scenario, you would send this data to the server using AJAX or Fetch
-    // For simplicity, we'll just log the data to the console in this example
-    console.log(formData);
-
-    // You can add AJAX or Fetch code here to send data to the server and save it to the database
-}
-
+        let form = document.querySelector("form");
+        // The document.querySelector() method returns the first element that matches a specified CSS selector.
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+            document.querySelector("#sub").value = "Submiting..";
+            // Change the value of the submit button to "Submitting..." while the form is being submitted.
+            let data = new FormData(form);
+            // The FormData() method creates a new FormData object that contains the values of all the form fields.
+            fetch('https://script.google.com/macros/s/AKfycbxp58OhHDHfHNbRb-JNITRa8X_4ywLYYECP5Iw9c7nJETvE_3hpA-17tPhhvML1hM2p/exec', {
+                    method: "POST",
+                    body: data
+                })
+                // The fetch() method is used to make a request to the server and retrieve data.
+                // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+                .then(res => res.text())
+                // The .then() method is used to handle the response from the server.
+                // The response is converted to text using the res.text() method.
+                .then(data => {
+                    document.querySelector("#msg").innerHTML = data;
+                    // The innerHTML property sets or returns the HTML content of an element.
+                    // Here, we are setting the content of the <h1> element to the response from the server.
+                    document.querySelector("#sub").value = "Submit"
+                    // Change the value of the submit button back to "Submit" after the form has been submitted.
+                });
+        })
     </script>
 </body>
+ 
 </html>
+                
+
+            

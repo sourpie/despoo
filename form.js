@@ -1,6 +1,6 @@
-// document.addEventListener("contextmenu", function (e) {
-//   e.preventDefault();
-// });
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
 
 const states = [
   "Andhra Pradesh",
@@ -84,6 +84,8 @@ function dropBox(inputType, data) {
   let x = true;
   var content = document.querySelector("." + inputType + "-content");
   var select_input = document.querySelector(".select-" + inputType);
+  var selectedValue = "";
+
   select_input.addEventListener("click", () => {
     if (x) {
       content.style.display = "none";
@@ -92,49 +94,38 @@ function dropBox(inputType, data) {
       content.style.display = "block";
       x = !x;
     }
-
-
   });
 
   document.addEventListener("click", (event) => {
-    // Check if the clicked element is outside the content
     if (!content.contains(event.target) && event.target !== select_input) {
       content.style.display = "none";
       x = false;
     }
   });
 
-  var selectedValue = "";
-  var inputOptions = document.querySelectorAll("#" + inputType + "-options li");
+  const input_options = document.querySelector("#" + inputType + "-options");
+  const inputElement = document.querySelector("." + inputType + "-input");
 
-  inputOptions.forEach((option) => {
-    option.addEventListener("click", (e) => {
+  input_options.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
       selectedValue = e.target.textContent;
       select_input.textContent = selectedValue;
       content.style.display = "none";
-    });
-    selectedCollege = selectedValue;
+    }
   });
-
-  const input_options = document.querySelector("#" + inputType + "-options");
-  const inputElement = document.querySelector("." + inputType + "-input");
-  let inputSearch = inputElement.value;
 
   inputElement.addEventListener("keyup", (e) => {
     let filteredData = [];
-    inputSearch = e.target.value.toLowerCase();
+    let inputSearch = e.target.value.toLowerCase();
 
     filteredData = data
-      .filter((item) => {
-        return item.toLowerCase().startsWith(inputSearch);
-      })
-      .map((item) => {
-        return `<li>${item}</li>`;
-      })
+      .filter((item) => item.toLowerCase().startsWith(inputSearch))
+      .map((item) => `<li>${item}</li>`)
       .join("");
     input_options.innerHTML = filteredData;
   });
 }
+
 
 dropBox("sport", sports);
 dropBox("state", states);
@@ -153,11 +144,13 @@ fetch("https://bitsbosm.org/2023/registrations/get_colleges", {
       return item.name;
     });
 
-    // Filter names that start with "BITS"
     const uNames = names.filter((item) => {
-      return !item.startsWith("BITS");
+      return !item.startsWith("BITS") && !item.startsWith("Alumni");
     });
+    
     uNames.push("BITS PILANI", "BITS GOA", "BITS HYDERABAD");
+    uNames.unshift("Other...")
+
 
     dropBox("college", uNames);
   })
@@ -165,33 +158,47 @@ fetch("https://bitsbosm.org/2023/registrations/get_colleges", {
     console.error("Error:", error);
   });
 
-
 async function submitForm() {
- var playerName = document.getElementById("name").value;
- var playerEmail = document.getElementById("emailinput").value;
- var playerPhone = document.getElementById("phoneinput").value;
- var playerCollege = document.querySelector(".select-college").textContent;
- var playerState = document.querySelector(".select-college").textContent;
- var playerSport = document.querySelector(".select-sport").textContent;
+  var playerName = document.getElementById("name").value;
+  var playerEmail = document.getElementById("emailinput").value;
+  var playerPhone = document.getElementById("phoneinput").value;
+  var playerCollege = document.querySelector(".select-college").textContent;
+  var playerState = document.querySelector(".select-state").textContent;
+  var playerSport = document.querySelector(".select-sport").textContent;
+  var playerGender = null;
 
- var male = document.querySelector("#male").checked;
- const playerGender = male ? "Male" : "Female";
+  var male = document.querySelector("#male").checked;
+  var female = document.querySelector("#female").checked;
+  if (male) {
+    playerGender = "Male";
+  } else if (female) {
+    playerGender = "Female";
+  }
 
   if (
     playerName == "" ||
     playerPhone == "" ||
     playerEmail == "" ||
-    playerCollege == "SELECT COLLEGE" ||
-    playerState == "SELECT STATE" ||
-    playerSport == "SELECT SPORT" ||
-    playerGender==null
+    playerCollege.startsWith("SELECT") ||
+    playerState.startsWith("SELECT") ||
+    playerSport.startsWith("SELECT") ||
+    playerGender == null
   ) {
     alert("Please fill all form fields");
+    return;
   }
 
-  var scriptURL =
-    "https://script.google.com/macros/s/AKfycbzOh22gkiQN2l1HO3ZZ-t49UkZ_B3an010Nw-lS-i95TMw44po5hP9Zofrwc1v-oOQF/exec";
-  var formData = {
+  if (playerCollege.startsWith("Other...")) {
+    alert("Please specify your college in the input box.");
+    otherCollege = prompt("Enter your college:");
+    document.querySelector(".select-college").textContent=otherCollege
+    playerCollege=otherCollege;
+  }
+
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbz1c9Jw3qtzDAkvyFeMdB1Ue9O6-8qaCno13bKd8v-Py4dRt5j7uvdg4xRjqzmzGzpz/exec";
+
+  const formData = {
     name: playerName,
     email: playerEmail,
     phone: playerPhone,
@@ -201,19 +208,21 @@ async function submitForm() {
     gender: playerGender,
   };
 
+  // Send data to Google Apps Script
   try {
-    await fetch(scriptURL, {
+    const response = await fetch(scriptUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(formData),
     });
 
-    alert("Form submitted successfully!");
+    if (response.ok) {
+      const responseText = await response.text();
+      console.log("Server response:", responseText);
+      alert("form submitted successfully")
+    } else {
+      console.error("Error submitting form data:", response.statusText);
+    }
   } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("An error occurred while submitting the form");
+    console.error("Error submitting form data:", error.message);
   }
 }
-
