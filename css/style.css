@@ -217,6 +217,10 @@ h6 {
     background-repeat: no-repeat;
     background-size: contain;
   }
+
+  .header__button-1 {
+    display: none;
+  }
 }
 
 .hidden {
@@ -4431,6 +4435,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .header__button-1 {
+    display: block;
     position: absolute;
     right: 100px;
     bottom: 10px;
@@ -5916,6 +5921,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .header__button-1 {
+    display: block;
     position: absolute;
     right: 100px;
     top: 10px;
