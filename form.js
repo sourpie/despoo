@@ -218,7 +218,7 @@ async function submitForm() {
     if (response.ok) {
       const responseText = await response.text();
       console.log("Server response:", responseText);
-      alert("form submitted successfully")
+      alert("Form submitted successfully")
     } else {
       console.error("Error submitting form data:", response.statusText);
     }
