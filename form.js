@@ -109,6 +109,18 @@ function dropBox(inputType, data) {
   input_options.addEventListener("click", (e) => {
     if (e.target.tagName === "LI") {
       selectedValue = e.target.textContent;
+
+      if (selectedValue === "Other...") {
+        const otherValue = prompt(`Enter your ${inputType.toLowerCase()}:`);
+        if (otherValue) {
+          selectedValue = otherValue;
+          data.push(otherValue);
+        } else {
+          // If the user cancels the prompt, don't change the selection
+          return;
+        }
+      }
+
       select_input.textContent = selectedValue;
       content.style.display = "none";
     }
@@ -125,7 +137,6 @@ function dropBox(inputType, data) {
     input_options.innerHTML = filteredData;
   });
 }
-
 
 dropBox("sport", sports);
 dropBox("state", states);
@@ -147,10 +158,9 @@ fetch("https://bitsbosm.org/2023/registrations/get_colleges", {
     const uNames = names.filter((item) => {
       return !item.startsWith("BITS") && !item.startsWith("Alumni");
     });
-    
-    uNames.push("BITS PILANI", "BITS GOA", "BITS HYDERABAD");
-    uNames.unshift("Other...")
 
+    uNames.push("BITS PILANI", "BITS GOA", "BITS HYDERABAD");
+    uNames.unshift("Other...");
 
     dropBox("college", uNames);
   })
@@ -189,13 +199,18 @@ async function submitForm() {
   }
 
   if (playerCollege.startsWith("Other...")) {
-    alert("Please specify your college in the input box.");
-    otherCollege = prompt("Enter your college:");
-    document.querySelector(".select-college").textContent=otherCollege
-    playerCollege=otherCollege;
+    const otherCollege = prompt("Enter your college:");
+    if (otherCollege) {
+      document.querySelector(".select-college").textContent = otherCollege;
+      playerCollege = otherCollege;
+    } else {
+      // If the user cancels the prompt, don't proceed with the registration
+      return;
+    }
   }
-  const reg=document.querySelector(".register-text")
-  reg.textContent="Registering..."
+
+  const reg = document.querySelector(".register-text");
+  reg.textContent = "Registering...";
 
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbz1c9Jw3qtzDAkvyFeMdB1Ue9O6-8qaCno13bKd8v-Py4dRt5j7uvdg4xRjqzmzGzpz/exec";
@@ -225,8 +240,7 @@ async function submitForm() {
     }
   } catch (error) {
     console.error("Error submitting form data:", error.message);
-  }
-  finally{
-   location.reload()
+  } finally {
+    location.reload();
   }
 }
