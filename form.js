@@ -168,7 +168,6 @@ fetch("https://bitsbosm.org/2023/registrations/get_colleges", {
     });
 
     uNames.push("BITS PILANI", "BITS GOA", "BITS HYDERABAD");
-    uNames.unshift("Other...");
 
     dropBox("college", uNames);
   })

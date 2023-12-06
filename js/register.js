@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   registerButton.addEventListener("click", function () {
     // Open a new page or URL when the button is clicked
-    window.location.href = "form.html";
+    window.location.href = "registration.html";
   });
 });
 
