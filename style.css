@@ -134,7 +134,7 @@ body {
   background-color: transparent;
   border: 3px solid white;
   border-radius: 5px;
-  width: 100%;
+  width:85%;
   padding: 5px;
   outline: none;
 }
@@ -244,9 +244,7 @@ body {
     width: 100%;
   }
 
-  .common-input {
-    width: 100%;
-  }
+ 
   #collegeinput {
     width: 100%;
   }
