@@ -110,7 +110,40 @@ body {
   color: white;
 }
 
+.gender {
+  display: flex;
+  flex-direction: column;
+}
 
+/* Container for the gender categories (male and female) */
+.gender-category {
+  display: flex;
+  align-items: center; /* Align the items vertically in the center */
+}
+
+/* Container for the male part and female part */
+.male-part,
+.female-part {
+  display: flex;
+  align-items: center; /* Align the items vertically in the center */
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+/* Styling for radio buttons */
+.checker {
+  margin-right: 8px; /* Adjust margin as needed */
+}
+
+/* Styling for the gender text label */
+.gendertext {
+  margin-bottom: 9px; /* Adjust margin as needed */
+}
+
+/* Styling for the male text label */
+.maletext,
+.femaletext {
+  margin: 0; /* Reset margin for the male and female text labels */
+}
 
 
 
