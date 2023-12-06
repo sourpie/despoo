@@ -75,67 +75,75 @@ const sports = [
 function dropBox(inputType, data) {
   let options = document.querySelector("#" + inputType + "-options");
 
-  data.forEach((item) => {
-    let li = document.createElement("li");
-    li.textContent = item;
-    options.appendChild(li);
-  });
+data.forEach((item) => {
+  let li = document.createElement("li");
+  li.textContent = item;
+  options.appendChild(li);
+});
 
-  let x = true;
-  var content = document.querySelector("." + inputType + "-content");
-  var select_input = document.querySelector(".select-" + inputType);
-  var selectedValue = "";
+let x = true;
+var content = document.querySelector("." + inputType + "-content");
+var select_input = document.querySelector(".select-" + inputType);
+var selectedValue = "";
 
-  select_input.addEventListener("click", () => {
-    if (x) {
-      content.style.display = "none";
-      x = false;
-    } else {
-      content.style.display = "block";
-      x = !x;
-    }
-  });
+select_input.addEventListener("click", () => {
+  if (x) {
+    content.style.display = "none";
+    x = false;
+  } else {
+    content.style.display = "block";
+    x = !x;
+  }
+});
 
-  document.addEventListener("click", (event) => {
-    if (!content.contains(event.target) && event.target !== select_input) {
-      content.style.display = "none";
-      x = false;
-    }
-  });
+document.addEventListener("click", (event) => {
+  if (!content.contains(event.target) && event.target !== select_input) {
+    content.style.display = "none";
+    x = false;
+  }
+});
 
-  const input_options = document.querySelector("#" + inputType + "-options");
-  const inputElement = document.querySelector("." + inputType + "-input");
+const input_options = document.querySelector("#" + inputType + "-options");
+const inputElement = document.querySelector("." + inputType + "-input");
 
-  input_options.addEventListener("click", (e) => {
-    if (e.target.tagName === "LI") {
-      selectedValue = e.target.textContent;
+input_options.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    selectedValue = e.target.textContent;
 
-      if (selectedValue === "Other...") {
-        const otherValue = prompt(`Enter your ${inputType.toLowerCase()}:`);
-        if (otherValue) {
-          selectedValue = otherValue;
-          data.push(otherValue);
-        } else {
-          // If the user cancels the prompt, don't change the selection
-          return;
-        }
+    if (selectedValue === "Other...") {
+      const otherValue = prompt(`Enter your ${inputType.toLowerCase()}:`);
+      if (otherValue) {
+        selectedValue = otherValue;
+        data.push(otherValue);
+      } else {
+        // If the user cancels the prompt, don't change the selection
+        return;
       }
-
-      select_input.textContent = selectedValue;
-      content.style.display = "none";
     }
-  });
 
-  inputElement.addEventListener("keyup", (e) => {
-    let filteredData = [];
-    let inputSearch = e.target.value.toLowerCase();
+    select_input.textContent = selectedValue;
+    content.style.display = "none";
+  }
+});
 
-    filteredData = data
-      .filter((item) => item.toLowerCase().startsWith(inputSearch))
-      .map((item) => `<li>${item}</li>`)
-      .join("");
-    input_options.innerHTML = filteredData;
-  });
+inputElement.addEventListener("keyup", (e) => {
+  let filteredData = [];
+  let inputSearch = e.target.value.toLowerCase();
+
+  filteredData = data
+    .filter((item) => item.toLowerCase().startsWith(inputSearch))
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
+  input_options.innerHTML = filteredData;
+
+  // Check if the input search value is not in the current data
+  if (!data.includes(inputSearch) && inputSearch !== "other...") {
+    // If not in the current data, fill the college name field with the search input
+    select_input.textContent = inputSearch;
+    selectedValue = inputSearch;
+  }
+});
 }
 
 dropBox("sport", sports);
