@@ -142,18 +142,25 @@ function dropBox(inputType, data) {
       selectedValue = inputSearch;
     }
 
-
-     if (e.data === '\n' || e.data === '\r' || e.data === '\r\n') {
-    content.style.display = "none";
-    x = false;}
-    
     // Close the dropdown when Enter key is pressed
     if (e.key === "Enter") {
       content.style.display = "none";
       x = false;
+      inputElement.blur(); // Blur the input to close the mobile keyboard
     }
   });
+
+  // Handle touch events to close the dropdown on mobile
+  inputElement.addEventListener("focus", () => {
+    content.style.display = "block";
+  });
+
+  inputElement.addEventListener("blur", () => {
+    content.style.display = "none";
+    x = false;
+  });
 }
+
 
 
 dropBox("sport", sports);
