@@ -142,6 +142,11 @@ function dropBox(inputType, data) {
       selectedValue = inputSearch;
     }
 
+
+     if (e.data === '\n' || e.data === '\r' || e.data === '\r\n') {
+    content.style.display = "none";
+    x = false;}
+    
     // Close the dropdown when Enter key is pressed
     if (e.key === "Enter") {
       content.style.display = "none";
