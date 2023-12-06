@@ -1,6 +1,4 @@
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
+
 
 const states = [
   "Andhra Pradesh",

@@ -19,28 +19,13 @@ body {
   z-index: 1;
 }
 
-  .bgimg {
-            position: fixed;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            /* Add your background properties here */
-            background-image: url('./img/background.png');
-            background-size: cover;
-            /* Add other background properties as needed */
-        }
-
-        /* Media query for responsiveness */
-        @media only screen and (max-width: 768px) {
-            /* Styles for screens with a maximum width of 768px */
-            .bgimg {
-                /* Adjust background properties for smaller screens */
-                background-size: contain;
-                /* Add other styles for smaller screens as needed */
-            }
-        }
+.bgimg {
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+}
 
 .facedesign {
   height: 200px;
