@@ -46,6 +46,9 @@ textarea {
   font-family: inherit;
 }
 
+.header-sticky{
+  display: none;
+}
 input::-ms-clear {
   display: none;
 }
@@ -226,35 +229,34 @@ h6 {
 .hidden {
   display: none;
 }
-.header-sticky {
-  position: fixed;
-  left: 0;
-  top: -150px;
-  background: inherit;
-  width: 100%;
-  height: 10vh;
-  padding-right: 43px;
-  z-index: 1111111111;
-  transition: top 2s;
-  border-bottom: 1px solid rgba(130, 125, 155, 0.3);
-  display: none;
-}
+/* .header-sticky {
+  transform: translate(-50%,0); 
+  left: 50%; 
+  position: relative; 
+  height: 13rem; 
+  width: 100vw; 
+  padding: 2rem 3rem;
+} */
 @media (max-width: 990px) {
   .header-sticky {
-    top: 0;
-    padding-right: 0;
     display: block;
-    padding: 3px 3px 3px 3px;
-    background: black;
+    transform: translate(-50%, 0);
+    left: 50%;
+    position: relative;
+    height: 13rem;
+    width: 100vw;
+    padding: 2rem 3rem;
   }
 }
 @media (max-width: 420px) {
   .header-sticky {
-    height: 72px;
-    padding: 3px 3px 3px 3px;
-    position: absolute;
-    display: contents;
-    background: inherit;
+    display: block;
+    transform: translate(-50%, 0);
+    left: 50%;
+    position: relative;
+    height: 13rem;
+    width: 100vw;
+    padding: 2rem 3rem;
   }
 }
 .header-sticky .mobileMenu__header-close {
@@ -3909,7 +3911,7 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     transform: translateX(-50%);
     bottom: 90px;
-    width: 908px;
+    width: 92vw;
     height: 100px;
     background: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
@@ -5589,7 +5591,7 @@ body::-webkit-scrollbar-thumb {
     right: -415px;
   }
   .offer .offer__text {
-    width: 585px;
+    width: 92vw;
     height: 80px;
   }
   .offer .offer__decor {
@@ -5776,7 +5778,7 @@ body::-webkit-scrollbar-thumb {
     display: block;
   }
   .offer {
-    height: 700px;
+    height: 100vh;
     position: relative;
     z-index: 1;
   }
@@ -5786,8 +5788,8 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     top: 0;
     width: 100%;
-    height: 700px;
-    background-image: url(../images/offer_bg-mob.png);
+    height: 100vh;
+    background-image: url(../images/offer_bg-mob-fotor.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     z-index: -1;
@@ -7025,12 +7027,12 @@ body::-webkit-scrollbar-thumb {
     height: 564px;
   }
   .offer {
-    height: 600px;
+    height: 100vh;
   }
   .offer__background {
-    background-image: url(../images/offer_bg-mob.png);
+    background-image: url(../images/offer_bg-mob-fotor.jpg);
     background-size: cover;
-    height: 600px;
+    height: 100vh;
   }
   .offer__title {
     transform: translateX(-50%) scale(0.8);
