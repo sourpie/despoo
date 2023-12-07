@@ -5820,6 +5820,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 3;
     height: 602px;
     width: 375px;
+    bottom: 12rem;
   }
   .offer__heroes .heroes__v {
     position: absolute;
@@ -5913,7 +5914,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 54px;
+    bottom: 74px;
     width: 366px;
     height: 143.216px;
     z-index: 4;
