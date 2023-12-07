@@ -5954,8 +5954,8 @@ body::-webkit-scrollbar-thumb {
     margin-left: 13rem;
     transform: translateX(-50%);
     bottom: 2rem;
-    width: 92vw;
-    height: 50px;
+    width: 90%;
+    height: 40px;
     background-image: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
     background-size: cover;
