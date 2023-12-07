@@ -238,6 +238,7 @@ h6 {
   transition: top 2s;
   border-bottom: 1px solid rgba(130, 125, 155, 0.3);
   display: none;
+  box-sizing: border-box;
 }
 @media (max-width: 990px) {
   .header-sticky {
@@ -1252,7 +1253,7 @@ body::-webkit-scrollbar-thumb {
     left: 46.5%;
     transform: translateX(-50%);
     bottom: 90px;
-    width: 1030px;
+    width: 92vw;
     height: 120px;
     background: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
@@ -3909,7 +3910,7 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     transform: translateX(-50%);
     bottom: 90px;
-    width: 908px;
+    width: 92vw;
     height: 100px;
     background: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
@@ -4465,7 +4466,7 @@ body::-webkit-scrollbar-thumb {
     margin-left: 13rem;
     transform: translateX(-50%);
     bottom: 0;
-    width: 82vw;
+    width: 92vw;
     height: 65px;
     background-image: url(../images/offer__title-1.png);
     background-repeat: no-repeat;
@@ -5589,7 +5590,7 @@ body::-webkit-scrollbar-thumb {
     right: -415px;
   }
   .offer .offer__text {
-    width: 585px;
+    width: 92vw;
     height: 80px;
   }
   .offer .offer__decor {
@@ -7306,7 +7307,7 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1620px) {
   .offer .offer__text {
     bottom: 44px;
-    width: 1230px;
+    width: 92vw;
     height: 138px;
   }
   .offer .offer__title .offer__title_stones {
