@@ -5952,7 +5952,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     margin-left: 13rem;
     transform: translateX(-50%);
-    bottom: 0;
+    bottom: 2rem;
     width: 92vw;
     height: 50px;
     background-image: url(../images/offer__title-1.png);
